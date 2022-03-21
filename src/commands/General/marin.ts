@@ -40,5 +40,4 @@ run = async (M: ISimplifiedMessage): Promise<void> => {
         type: 1,
       };
     await M.reply(buttons, MessageType.buttons);
-  };
 }
