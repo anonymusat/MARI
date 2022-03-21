@@ -98,15 +98,8 @@ export default class Command extends BaseCommand {
         buttonId: "OWNER",
         buttonText: {displayText: `${this.client.config.prefix}mods` },
         type: 1,
-      },
-    ];
-
-    const buttonMessage: any = {
-      contentText: `Hello 😏😗 ,I'am  ✴🎀𝓜𝓐𝓡𝓘𝓝𝓔🎀✴ say how can i help you`,
-      footerText: "©AYUSH2022",
-      buttons: buttons,
-      headerType: 1,
-    };
-    await M.reply(buttonMessage, MessageType.buttonsMessage);
+      }
+}	
+    await M.reply(buttons,MessageType.buttons);
   };
 }
