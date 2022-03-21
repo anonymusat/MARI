@@ -7,28 +7,31 @@ import WAClient from "../../lib/WAClient";
 import { ISimplifiedMessage } from "../../typings";
 
 export default class Command extends BaseCommand {
-	constructor(client: WAClient, handler: MessageHandler) {
-		super(client, handler, {
-			command: "hi",
-			description: "Generally used to check if bot is Up",
-			category: "general",
-			usage: `${client.config.prefix}hi`,
-			baseXp: 10,
-		});
-	}
+  constructor(client: WAClient, handler: MessageHandler) {
+    super(client, handler, {
+      command: "hi",
+      description: "Generally used to check if bot is Up",
+      category: "general",
+      usage: `${client.config.prefix}hi`,
+      baseXp: 10,
+    });
+  }
 
-	run = async (M: ISimplifiedMessage): Promise<void> => {
-		const chitoge =
-			"https://c.tenor.com/NvYI5wQNfgUAAAPo/nakano-yotsuba-pout.mp4";
-		return void this.client.sendMessage(
-			M.from,
-			{ url: chitoge },
-			MessageType.video,
-			{
-				quoted: M.WAMessage,
-				mimetype: Mimetype.gif,
-				caption: `I don't have time to have a conversation with someone like you. Use something from *${this.client.config.prefix}help* list if you want anything. \n`,
-			}
-		);
-	};
+  run = async (M: ISimplifiedMessage): Promise<void> => {
+    const buttons = [
+      {
+        buttonId: "help",
+        buttonText: { displayText: `${this.client.config.prefix}help` },
+        type: 1,
+      },
+    ];
+
+    const buttonMessage: any = {
+      contentText: `Hello there, LUCIFER~BOT present here👋`,
+      footerText: "©AYUSH2022",
+      buttons: buttons,
+      headerType: 1,
+    };
+    await M.reply(buttonMessage, MessageType.buttonsMessage);
+  };
 }
