@@ -13,13 +13,20 @@ export default class Command extends BaseCommand {
             description: 'Displays the help menu or shows the info of the command provided',
             category: 'general',
             usage: `${client.config.prefix}help (command_name)`,
-            aliases: ['h']
+            aliases: ['h','menu','panel']
         })
     }
 
     run = async (M: ISimplifiedMessage, parsedArgs: IParsedArgs): Promise<void> => {
             const n = [
-            'https://telegra.ph/file/cc211d2b195ccbef82bff.mp4'
+            'https://c.tenor.com/Su-TFY-1OnoAAAPo/jshk-jibaku-shounen-hanako-kun.mp4',
+	    'https://c.tenor.com/dx5sdhciKS8AAAPo/atsushi-nakajima-confused.mp4',
+	    'https://c.tenor.com/qVX-FFJ5CmgAAAPo/anime-boy.mp4',
+	    'https://c.tenor.com/nBIqU5BhJy8AAAPo/dazai-osamu-dazai.mp4',
+	    'https://c.tenor.com/BGTXuJ-Q8uMAAAPo/free-anime.mp4',
+	    'https://c.tenor.com/u0bS6ijzM9AAAAPo/ban-nanatsu-anime.mp4',
+	    'https://c.tenor.com/X654BdOFY6wAAAPo/jjk.mp4',
+	    'https://c.tenor.com/f9C16ymeFVYAAAPo/anime-rin.mp4',
         ]
         let chitoge = n[Math.floor(Math.random() * n.length)]
 	if (!parsedArgs.joined) {
@@ -43,46 +50,45 @@ export default class Command extends BaseCommand {
 				}
 			}
             let text = `
-╭─「(づ￣ 3￣)づ」
-│⋊ 𝕌𝕤𝕖𝕣: *${M.sender.username}*
-│⋊ ℕ𝕒𝕞𝕖: Yᴏᴛsᴜʙᴀ
+╭─「o(*￣︶￣*)o」
+│⋊ 𝕌𝕤𝕖𝕣: *${M.sender.username }*
+│⋊ ℕ𝕒𝕞𝕖: ✴🎀𝓜𝓐𝓡𝓘𝓝𝓔🎀✴
 │⋊ ℙ𝕣𝕖𝕗𝕚𝕩: ${this.client.config.prefix}
-│⋊ 𝕆𝕨𝕟𝕖𝕣: *${this.client.config.prefix}mod*
-│⋊ 𝕆𝕗𝕗𝕚𝕔𝕚𝕒𝕝 𝔾𝕣𝕠𝕦𝕡: http://gg.gg/Piku-and-yotsuba-support
+│⋊ 𝕆𝕨𝕟𝕖𝕣: * wa.me//+018130784851 */n/n* wa.me//+919574584820 *
+│⋊ 𝕆𝕗𝕗𝕚𝕔𝕚𝕒𝕝 𝔾𝕣𝕠𝕦𝕡: https://chat.whatsapp.com/E5CwW1dAXjRKE3XuLXxF8J
 ╰────────────┈平和                            \n\n`
             const keys = Object.keys(categories)
             for (const key of keys)
-                text += `*『 ${this.client.util.capitalize(
-					key
-	         )} 』*\n❐ \`\`\`${categories[key]
+              	text += `${this.emojis[keys.indexOf(key)]} *${this.client.util.capitalize(key)}*\n❐ \`\`\`${categories[key]
                     .map((command) => command.config?.command)
                     .join(', ')}\`\`\`\n\n`
             return void this.client.sendMessage(M.from, { url: chitoge }, MessageType.video, {quoted:M.WAMessage,
             mimetype: Mimetype.gif,
             caption: `${text} 
- ──❅┈[ 𝒀𝒐𝒕𝒔𝒖𝒃𝒂 𝑩𝒐𝒕 ]┈❅───
+ ──❅┈[ LUCIFER BOT ]┈❅───
 ┌────────────┈❅
-│   🧨 YᴏᴛsUʙᴀ
-│   ©️ ՏYᑎTᕼᗴՏIᘔᗴᗪ IᑎᖴIᑎITY
+│  ❄ ✴🎀𝓜𝓐𝓡𝓘𝓝𝓔🎀✴ 
+│  ©️ MADE BY AYUSH
 └────────────┈⁂
 ❅┈[𝐇𝐚𝐯𝐞 𝐆𝐫𝐞𝐚𝐭 𝐃𝐚𝐲]┈❅
 🎗 *Note: Use ${this.client.config.prefix}help <command_name> to view the command info*` }
             )
         }
-        const key = parsedArgs.joined.toLowerCase()
-        const command = this.handler.commands.get(key) || this.handler.aliases.get(key)
-        if (!command) return void M.reply(`No Command of Alias Found | "${key}"`)
-        const state = await this.client.DB.disabledcommands.findOne({ command: command.config.command })
+        const key = parsedArgs.joined.toLowerCase();
+		const command =this.handler.commands.get(key) || this.handler.aliases.get(key);
+		if (!command) return void M.reply(`No Command of Alias Found | "${key}"`);
+		 const state = await this.client.DB.disabledcommands.findOne({ command: command.config.command })
         M.reply(
-            `🎈 *Command:* ${this.client.util.capitalize(command.config?.command)}\n📉 *Status:* ${
+            `*📗 Command:* ${this.client.util.capitalize(command.config?.command)}\n🎗️ *Status:* ${
                 state ? 'Disabled' : 'Available'
-            }\n⛩ *Category:* ${this.client.util.capitalize(command.config?.category || '')}${
-                command.config.aliases
-                    ? `\n♦️ *Aliases:* ${command.config.aliases.map(this.client.util.capitalize).join(', ')}`
+            }\n🀄 *Category:* ${this.client.util.capitalize(command.config?.category || '')}${
+                command.config.aliases && command.config.command !== 'react'
+                    ? `\n🍥 *Aliases:* ${command.config.aliases.map(this.client.util.capitalize).join(', ')}`
                     : ''
-            }\n🎐 *Group Only:* ${this.client.util.capitalize(
+            }\n🃏 *Group Only:* ${this.client.util.capitalize(
                 JSON.stringify(!command.config.dm ?? true)
-            )}\n💎 *Usage:* ${command.config?.usage || ''}\n\n📒 *Description:* ${command.config?.description || ''}`
-        )
-    }
+            )}\n📘 *Usage:* ${command.config?.usage || ''}\n\n📙 *Description:* ${command.config?.description || ''}`
+		);
+	};
+	emojis = ['❄️', '❄️', '❄️', '❄️', '❄️', '❄️', '❄️', '❄️', '❄️', '❄️', '❄️']
 }
