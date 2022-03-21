@@ -27,8 +27,18 @@ export default class Command extends BaseCommand {
 			{
 				quoted: M.WAMessage,
 				mimetype: Mimetype.gif,
-				caption: `⚡ *Yotsuba* ⚡\n\n🍀 *Description: A WhatsApp Bot With Rich NSFW features based on chitoge.*\n\n🌐 *OFFICIAL BOT URL: https://github.com/ShineiIchijo/Chitoge* \n\n 📒 *Guide: https://github.com/ShineiIchijo/Chitoge-Guides* \n\n 👾 *BOT URL:https://github.com/Whatup364/Yotsuba-Bot* \n`,
+				caption: `⚡ *✴🎀𝓜𝓐𝓡𝓘𝓝𝓔🎀✴* ⚡\n\n🍀 *Description: A WhatsApp Bot With Rich NSFW features based on chitoge.*\n\n🌐 *OFFICIAL BOT URL: https://github.com/DEVILL-MASCOT/marin* \n\n 📒\n`,
 			}
 		);
 	};
+}
+run = async (M: ISimplifiedMessage): Promise<void> => {
+    const buttons = [
+      {
+        buttonId: "help",
+        buttonText: { displayText: `${this.client.config.prefix}help` },
+        type: 1,
+      };
+    await M.reply(buttons, MessageType.buttons);
+  };
 }
