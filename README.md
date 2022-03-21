@@ -17,7 +17,7 @@
 ## ✨ Highlights
 
 -   Fully Modular Design
--   Object Oriented
+-   Object Oriente
 -   Written in [TypeScript](https://www.typescriptlang.org/)
 -   Self-Restoring Auth
 -   Built with [Baileys](https://github.com/adiwajshing/baileys) (The Best
