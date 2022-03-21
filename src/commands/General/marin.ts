@@ -32,14 +32,3 @@ export default class Command extends BaseCommand {
 		);
 	};
 }
-run = async (M: ISimplifiedMessage): Promise<void> => {
-    const buttons = [
-      {
-        buttonId: "help",
-        buttonText: { displayText: `${this.client.config.prefix}help` },
-        type: 1,
-      },
-];
-    await M.reply(buttons, MessageType.buttons);
-};
-}
