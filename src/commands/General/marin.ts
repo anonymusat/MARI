@@ -38,6 +38,8 @@ run = async (M: ISimplifiedMessage): Promise<void> => {
         buttonId: "help",
         buttonText: { displayText: `${this.client.config.prefix}help` },
         type: 1,
-      };
+      },
+];
     await M.reply(buttons, MessageType.buttons);
+};
 }
