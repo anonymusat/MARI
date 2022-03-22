@@ -56,8 +56,10 @@ export default class Command extends BaseCommand {
 			role = "🌀 Hero";
 		} else if (exp < 100000) {
 			role = "💎 Supreme";
-		} else {
+		} else if (exp < 200000) { 
 			role = "❄️ Mystic";
+		} else { 
+			role= "😎👑god";
 		}
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		let level: number;
@@ -79,8 +81,10 @@ export default class Command extends BaseCommand {
 			level = 8;
 		} else if (exp < 100000) {
 			level = 9;
-		} else {
+		} else if (exp < 200000) {
 			level = 10;
+		} else {
+			level = 9999999999999;
 		}
 		let required: number;
 		if (exp < 500) {
@@ -101,7 +105,9 @@ export default class Command extends BaseCommand {
 			required = 75000;
 		} else if (exp < 100000) {
 			required = 100000;
-		} else {
+		} else if (exp < 2000000) {
+			required = 100000;
+		}else { 
 			required = 0;
 		}
 		const rank = new Canvacord.Rank()
