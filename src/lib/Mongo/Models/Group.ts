@@ -43,7 +43,7 @@ const GroupSchema = new Schema({
     type: String,
     required: false,
     default: "all",
-  },
+    },
     //for switch on of the bot
     invitelink: {
         type: Boolean,
