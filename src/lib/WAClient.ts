@@ -22,7 +22,7 @@ export default class WAClient extends Base {
 	constructor(public config: IConfig) {
 		super();
 		this.browserDescription[0] = "Chitoge";
-		this.version = [3, 3234, 9];
+		this.version = [2, 2208, 14];
 		this.logger.level = "fatal";
 
 		this.on("chat-update", (update) => {
