@@ -1,9 +1,7 @@
-import { MessageType } from '@adiwajshing/baileys/lib/WAConnection'
 import axios from 'axios'
 import chalk from 'chalk'
 import { join } from 'path'
 import BaseCommand from '../lib/BaseCommand'
-import request from '../lib/request'
 import WAClient from '../lib/WAClient'
 import { ICommand, IParsedArgs, ISimplifiedMessage } from "../typings";
 
@@ -92,14 +90,10 @@ export default class MessageHandler {
 				groupMetadata?.subject || "DM"
 			)}`
 		);
-			if (!command)
-				return void M.reply( await request.buffer(`https://telegra.ph/file/1e39217e12c4bf9e4e788.jpg`),
-        MessageType.image,
-                    undefined,
-                    undefined,
-                    `No such command, Baka! Have you never seen someone use the command *${this.client.config.prefix}help*`,
-                    undefined
-                )
+		if (!command)
+			return void M.reply(
+				`No such command, Baka! Have you never seen someone use the command *${this.client.config.prefix}help*.`
+			);
 		const user = await this.client.getUser(M.sender.jid);
 		if (user.ban) return void M.reply("You're Banned from using commands.");
 		const state = await this.client.DB.disabledcommands.findOne({
