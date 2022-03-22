@@ -18,16 +18,14 @@ const client = new WAClient({
 	session: process.env.SESSION || "Chitoge",
 	prefix: process.env.PREFIX || ":",
 	mods: (process.env.MODS || "")
-		.split(",")
+		.split(", ")
 		.map((number) => `${number}@s.whatsapp.net`),
 	gkey: process.env.GOOGLE_API_KEY || "",
-        hapi: process.env.HEROKU_API || "none",
-        hname: process.env.HEROKU_DYNO_NAME || "none",
 	chatBotUrl: process.env.CHAT_BOT_URL || "",
 	gifApi: process.env.TENOR_API_KEY || "",
 	geniusKey: process.env.GENIUS_KEY || "",
-  malUsername: process.env.MAL_USERNAME || "",
-  malPassword: process.env.MAL_PASSWORD || "",
+	malUsername: process.env.MAL_USERNAME || "",
+	malPassword: process.env.MAL_PASSWORD || "",
 });
 client.log("Starting...");
 
