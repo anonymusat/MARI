@@ -29,16 +29,14 @@ export default class Command extends BaseCommand {
       await this.client.groupMetadata(M.from)
     ).participants;
     const stickers = [
-   		        "https://wallpapercave.com/w/wp6139612.jpg",
-   		        "https://wallpapercave.com/w/wp8879925.jpg",
-          		"https://wallpapercave.com/w/wp6139586.jpg",
-          		"https://wallpapercave.com/wp/wp6139586.jpg",
-         	        "https://wallpapercave.com/wp/wp10472356.png",
-          		"https://wallpapercave.com/wp/wp10472348.jpg",
-          		"https://wallpapercave.com/wp/wp8108753.jpg",
-          		"https://wallpapercave.com/wp/wp10440387.jpg",
-	  		"https://wallpapercave.com/wp/wp10440371.jpg",
-			"https://wallpapercave.com/wp/wp9078688.jpg",
+   	    'https://c.tenor.com/Vf6ZPQU3zMoAAAPo/marin-kitagawa-marin.mp4',
+	    'https://c.tenor.com/gu0EZJfpXP8AAAPo/marin-kitagawa-my-dress-up-darling.mp4',
+	    'https://c.tenor.com/LXLRCmwR9KIAAAPo/kitagawa-marin-marin-kitagawa.mp4',
+	    'https://c.tenor.com/9aXyxmnYW7oAAAPo/my-dress-up-darling-sono-bisque-doll-wa-koi-wo-suru.mp4',
+	    'https://c.tenor.com/Q7h_Uz-lf0YAAAPo/my-dress-up-darling-sono-bisque-doll-wa-koi-wo-suru.mp4',
+	    'https://c.tenor.com/Z75HOpn46VgAAAPo/kitagawa-marin-marin-kitagawa.mp4',
+	    'https://c.tenor.com/Y8xTSG60n4cAAAPo/my-dress-up-darling-my-dress-up-darling-gif.mp4',
+	    'https://c.tenor.com/XyfPrGSZizsAAAPo/marin-kitagawa-marin.mp4'
     ];
     const random = stickers[Math.floor(Math.random() * stickers.length)];
     if (flags.includes("--s") || flags.includes("--sticker")) {
@@ -99,22 +97,23 @@ export default class Command extends BaseCommand {
         members.length
       }*\n📢 *Announcer: @${M.sender.jid.split("@")[0]}*\n🧧 *Tags:*`;
       if (metadata.mods.length > 0) {
+	      text += `\n`;
         for (const Mods of metadata.mods) {
-          text += `\n🏅 *@${Mods.split("@")[0]}*`;
+		text += `\n🏅 *@${Mods.split("@")[0]}*`;
         }
       }
      // text += `\n`;
       if (metadata.admins.length > 0) {
-        text += `\n`;
+	      text += `\n`;
         for (const admins of metadata.admins) {
-          text += `\n👑 *@${admins.split("@")[0]}*`;
+		text += `\n👑 *@${admins.split("@")[0]}*`;
         }
       }
      // text += `\n`;
       if (metadata.others.length > 0) {
         text += `\n`;
         for (const others of metadata.others) {
-          text += `\n🎗 *@${others.split("@")[0]}*`;
+		text += `\n🎗 *@${others.split("@")[0]}*`;
         }
       }
       return void M.reply(
