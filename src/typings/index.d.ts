@@ -44,6 +44,7 @@ export interface IGroup {
   cmd: boolean;
   invitelink: boolean;
   news: boolean;
+  bot :string;
 }
 
 export interface IUser {
