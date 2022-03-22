@@ -25,11 +25,11 @@ export default class Command extends BaseCommand {
            MessageType.text
         ))
         const n = [
-            'https://c.tenor.com/sr7BjZ_-StIAAAPo/marin-kitagawa.mp4'
+            'https://i.pinimg.com/564x/e5/ab/cc/e5abcca9633085d2b54b31362017b9ec.jpg'
         ]
         let rin = n[Math.floor(Math.random() * n.length)]
         return void this.client.sendMessage(M.from, { url: rin }, MessageType.image, {quoted:M.WAMessage,
-            mimetype: Mimetype.gif,
+            mimetype: Mimetype.image,
             caption: `Regarding this, I have sent you a personal message in your DM📪\n` }
         )
 
