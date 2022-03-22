@@ -39,6 +39,12 @@ const GroupSchema = new Schema({
         default: true
     },
     // Can people ask for Invite link of this group?
+    bot: {
+    type: String,
+    required: false,
+    default: "all",
+  },
+    //for switch on of the bot
     invitelink: {
         type: Boolean,
         required: false,
