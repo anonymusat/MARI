@@ -1,6 +1,6 @@
 {
     
-  "name": "Yotsuba",
+  "name": "✴🎀𝓜𝓐𝓡𝓘𝓝𝓔🎀✴",
   "description": "A WhatsApp Bot With Rich NSFW Features based on chitoge.",
   "keywords": [
       "bot",
@@ -13,8 +13,8 @@
       "whatsapp-botto"
   ],
   "website": "https://github.com/ShinNouzen/Chitoge#readme",
-  "repository": "https://github.com//Whatup364/Chitoge.git",
-  "logo": "https://i.pinimg.com/736x/71/c2/8e/71c28e4ffd58c60aceacffab60db14cc.jpg",
+  "repository": "https://github.com//DEVILL-MASCOT/marin.git",
+  "logo": "https://i.pinimg.com/236x/8b/15/2b/8b152bfa29ed8e5af612023c0933b220.jpg",
   "success_url": "/",
   "env": {
       "PREFIX": {
