@@ -35,7 +35,7 @@ export default class Command extends BaseCommand {
     if (flags.includes("--s") || flags.includes("--sticker")) {
       const sticker: any = await new Sticker(random, {
         pack: "READ QUOTED MESSAGE",
-        author: "🌟 Chitoge 🌟",
+        author: "🎀𝓜𝓐𝓡𝓘𝓝𝓔🎀",
         quality: 90,
         type: "default",
         categories: ["🎊"],
@@ -78,14 +78,14 @@ export default class Command extends BaseCommand {
 	\n📢 *Announcer: @${M.sender.jid.split("@")[0]}*\n🧧 *Tags:*`;
       if (metadata.mods.length > 0) {
         for (const Mods of metadata.mods) {
-          text += `\n BOT OWNER'S*@${Mods.split("@")[0]}*`;
+          text += `\n BOT OWNER'S👑*@${Mods.split("@")[0]}*`;
         }
       }
      // text += `\n`;
       if (metadata.admins.length > 0) {
         text += `\n`;
         for (const admins of metadata.admins) {
-          text += `\n ADMIN'S*@${admins.split("@")[0]}*`;
+          text += `\n ADMIN'S❄️*@${admins.split("@")[0]}*`;
         }
      }
       return void M.reply(
