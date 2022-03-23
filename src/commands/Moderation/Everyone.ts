@@ -88,12 +88,11 @@ export default class Command extends BaseCommand {
           text += `\n ADMIN'S❄️*@${admins.split("@")[0]}*`;
         }
      }
-      return void M.reply(
-        text,
+      return void (await M.reply(text,
         MessageType.text,
         undefined,
         M.groupMetadata?.participants.map((user) => user.jid)
-      );
+      ));
     }
   };
 }
