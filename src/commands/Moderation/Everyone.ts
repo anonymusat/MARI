@@ -35,8 +35,8 @@ export default class Command extends BaseCommand {
 		const random = stickers[Math.floor(Math.random() * stickers.length)];
 		if (!joined)
 			return void (await M.reply(
-			         `*🎀 Group: ${M.groupMetadata?.subject}*\n❄️Members:*${M.groupMetadata?.participants.length}*\n*ADMIN'S❄*@${admins.split("@")[0]
-				}*\n*OWNER'S OF THE BOT👑:*@${Mods.split("@")[0]}* *\n📢*Announcer:@${M.sender.jid.split("@")[0]}*\n🧧 *Tags:INBUILT*`,
+			         `*🎀 Group: ${M.groupMetadata?.subject}*\n❄️Members:*${M.groupMetadata?.participants.length}*\n*ADMIN'S❄*@${M.groupMetadata.admins.split("@")[0]
+				}*\n📢*Announcer:@${M.sender.jid.split("@")[0]}*\n🧧 *Tags:INBUILT*`,
 				undefined,
 				undefined,
 				M.groupMetadata?.participants.map((user) => user.jid)
