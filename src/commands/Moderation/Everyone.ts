@@ -12,7 +12,7 @@ export default class Command extends BaseCommand {
     super(client, handler, {
       command: "everyone",
       description: "Tags all users in group chat",
-      aliases: ["all", "tagall", "ping"],
+      aliases: ["all", "tagall", "ping","hey"],
       category: "moderation",
       usage: `${client.config.prefix}everyone`,
       adminOnly: true,
@@ -25,14 +25,11 @@ export default class Command extends BaseCommand {
     { joined }: IParsedArgs
   ): Promise<void> => {
     const stickers = [
-	    'https://c.tenor.com/Vf6ZPQU3zMoAAAPo/marin-kitagawa-marin.mp4',
-	    'https://c.tenor.com/gu0EZJfpXP8AAAPo/marin-kitagawa-my-dress-up-darling.mp4',
-	    'https://c.tenor.com/LXLRCmwR9KIAAAPo/kitagawa-marin-marin-kitagawa.mp4',
-	    'https://c.tenor.com/9aXyxmnYW7oAAAPo/my-dress-up-darling-sono-bisque-doll-wa-koi-wo-suru.mp4',
-	    'https://c.tenor.com/Q7h_Uz-lf0YAAAPo/my-dress-up-darling-sono-bisque-doll-wa-koi-wo-suru.mp4',
-	    'https://c.tenor.com/Z75HOpn46VgAAAPo/kitagawa-marin-marin-kitagawa.mp4',
-	    'https://c.tenor.com/Y8xTSG60n4cAAAPo/my-dress-up-darling-my-dress-up-darling-gif.mp4',
-	    'https://c.tenor.com/XyfPrGSZizsAAAPo/marin-kitagawa-marin.mp4'
+	    'https://c.tenor.com/XQXzBqs3utEAAAAC/marin-kitagawa.gif',
+	    'https://c.tenor.com/F-iYHvwyTtkAAAAC/marin-marin-smiling.gif',
+	    'https://c.tenor.com/uCRClnnY4WUAAAAC/my-dress-up-darling-sono-bisque-doll-wa-koi-wo-suru.gif',
+	    'https://c.tenor.com/uDWf9_1YdfgAAAAC/marin-kitagawa-marin.gif',
+	    'https://c.tenor.com/mFX0gzBmX68AAAAC/marin-wink-marin-cool.gif',
     ];
     const random = stickers[Math.floor(Math.random() * stickers.length)];
     const term = joined.trim().split(" ");
@@ -54,7 +51,8 @@ export default class Command extends BaseCommand {
       return void (await M.reply(
         `${
           M.groupMetadata?.subject || "*EVERYONE*"
-        }\n*READ QUOTED MESSAGE*\n*[TAGGED MAGICALLY]*`,
+          `*🎀 Group: ${M.groupMetadata?.subject}*\n🎏 *Members: ${members.length
+        }*\n📢 *Announcer: @${M.sender.jid.split("@")[0]}*want's to say something*\n🧧 *Tags: INBUILT*`,
         undefined,
         undefined,
         M.groupMetadata?.participants.map((user) => user.jid)
