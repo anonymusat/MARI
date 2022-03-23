@@ -20,8 +20,8 @@ export default class Command extends BaseCommand {
         (await this.client.sendMessage(
         M.sender.jid,
                 `*📮𝗦𝘂𝗽𝗽𝗼𝗿𝘁 𝗚𝗿𝗼𝘂𝗽𝘀*\n\n
-                 *「ENJOY GROUP LINK 」*: https://chat.whatsapp.com/JdCxJkOzJn38TRYq5Q5evp\n\n
-                 *「owner's number」*:https://wa.me//+918130784951 \n\n https://wa.me//+919574584820`,
+                 *「ENJOY GROUP LINK 」*: https://chat.whatsapp.com/JdCxJkOzJn38TRYq5Q5evp\n
+                 *「owner's number」*:👑-1 https://wa.me//+918130784851\n\n👑-2 https://wa.me//+919574584820`,
            MessageType.text
         ))
         const n = [
@@ -32,6 +32,6 @@ export default class Command extends BaseCommand {
             mimetype: Mimetype.jpeg,
             caption: `Regarding this, I have sent you a personal message in your DM📪\n` }
         )
-
+ 
         }
 }
