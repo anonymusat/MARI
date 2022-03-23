@@ -49,8 +49,6 @@ export default class Command extends BaseCommand {
       ));
     } else
       return void (await M.reply(
-        `${
-          M.groupMetadata?.subject || "*EVERYONE*"
           `*🎀 Group:${M.groupMetadata?.subject}*\n🎏 *Members: ${
 	      members.length
         }*\n📢*Announcer: @${M.sender.jid.split("@")[0]} want's to say something*\n🧧 *Tags: INBUILT*`,
