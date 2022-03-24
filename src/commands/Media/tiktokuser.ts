@@ -23,7 +23,7 @@ export default class Command extends BaseCommand {
         if (!joined) return void M.reply('Provide the keywords you wanna search, Baka!')
         const chitoge = joined.trim()
         console.log(chitoge)
-        const { data } = await axios.get(`https://leyscoders-api.herokuapp.com/api/tiktok-stalk?username=${chitoge}name=pakelites1&apikey=dappakntlll`)
+        const { data } = await axios.get(`https://api-xcoders.xyz/api/stalk/tiktok?username=${chitoge}&apikey=LJowCce5Pn`)
         if ((data as { error: string }).error) return void (await M.reply('Sorry, couldn\'t find'))
         const buffer = await request.buffer(data.result.profile_url).catch((e) => {
             return void M.reply(e.message)
