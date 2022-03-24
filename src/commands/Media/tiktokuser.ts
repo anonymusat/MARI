@@ -25,7 +25,7 @@ export default class Command extends BaseCommand {
         console.log(chitoge)
         const { data } = await axios.get(`https://api-xcoders.xyz/api/stalk/tiktok?username=${chitoge}&apikey=LJowCce5Pn`)
         if ((data as { error: string }).error) return void (await M.reply('Sorry, couldn\'t find'))
-        const buffer = await request.buffer(data.result.profile_url).catch((err) {
+        const buffer = await request.buffer(data.result.profile_url).catch((err) => {
             M.reply(`Profile Picture not Accessible of ${username}`)
             pfp = 'https://www.linkpicture.com/q/LPic623c27cd7e54e401211294.jpg' {
             return void M.reply(e.message)
