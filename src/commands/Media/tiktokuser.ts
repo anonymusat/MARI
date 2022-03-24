@@ -23,17 +23,13 @@ export default class Command extends BaseCommand {
         if (!joined) return void M.reply('Provide the keywords you wanna search, Baka!')
         const chitoge = joined.trim()
         console.log(chitoge)
-        const { data } = await axios.get(`https://api-xcoders.xyz/api/stalk/tiktok?username=${chitoge}&apikey=LJowCce5Pn`)
+        const { data } = await axios.get(`https://leyscoders-api.herokuapp.com/api/tiktok-stalk?{chitoge}&apikey=dappakntlll`)
         if ((data as { error: string }).error) return void (await M.reply('Sorry, couldn\'t find'))
         const buffer = await request.buffer(data.result.profile_url).catch((err) => {
-            M.reply(`Profile Picture not Accessible of ${username}`)
-            pfp = 'https://www.linkpicture.com/q/LPic623c27cd7e54e401211294.jpg' {
             return void M.reply(e.message)
         })
         while (true) {
-            try {
-                M.reply(
-                    buffer || '🌟 An error occurred. Please try again later',
+            try {M.reply(buffer || '🌟 An error occurred. Please try again later',
                     MessageType.image,
                     undefined,
                     undefined,
