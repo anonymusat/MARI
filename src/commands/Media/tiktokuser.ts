@@ -9,12 +9,12 @@ import axios from 'axios'
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-            command: 'iguser',
-            aliases: ['ur', 'ig'],
-            description: 'Get the info of a user from ig ',
+            command: 'tiktokuser',
+            aliases: ['tik', 'tku'],
+            description: 'Get the info of a user from tiktok ',
             category: 'media',
             dm: true,
-            usage: `${client.config.prefix}iguser [name]`
+            usage: `${client.config.prefix}tiktok [name]`
         })
     }
 	
