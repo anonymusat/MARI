@@ -33,9 +33,9 @@ https://github.com/monarch21
 https://instagram.com/at.__010
 https://instagram.com/Bts.bigghitofficial7
 🕸𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢;
-t.me/@kim_Ayush
+https://t.me/kim_Ayush
 🚀𝘿𝙞𝙨𝙘𝙤𝙧𝙙;
-｟𝖢𝗈𝗆𝗂𝗇𝗀 𝖲𝗈𝗈𝗇｠
+>> https://discord.gg/Gkevahetaq <<
 ⪼𝖲𝖾𝖾 𝗒𝖺𝗁 💘` }
         )
     }
