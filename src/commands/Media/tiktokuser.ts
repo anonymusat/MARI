@@ -26,7 +26,7 @@ export default class Command extends BaseCommand {
         const { data } = await axios.get(`https://leyscoders-api.herokuapp.com/api/tiktok-stalk?username=${chitoge}1&apikey=your_key`)
         if ((data as { error: string }).error) return void (await M.reply('Sorry, couldn\'t find'))
         const buffer = await request.buffer(data.result.profile_url).catch((err) => {
-            return void M.reply(e.message)
+            return void M.reply(err.message)
         })
         while (true) {
             try {M.reply(buffer || '🌟 An error occurred. Please try again later',
