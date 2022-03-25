@@ -311,7 +311,4 @@ this.client.sendMessage(M.from,button,MessageType.listMessage)
     // }
 
     this.emojis = ['🚀', '🌀', '🎵', '🧿', '⚖️', '🚫','👑', '✨', '📚']
-                   
-		);
-	};
-}
+}}}
