@@ -27,7 +27,7 @@ export default class Command extends BaseCommand {
 	    'https://c.tenor.com/Q7h_Uz-lf0YAAAPo/my-dress-up-darling-sono-bisque-doll-wa-koi-wo-suru.mp4',
 	    'https://c.tenor.com/Z75HOpn46VgAAAPo/kitagawa-marin-marin-kitagawa.mp4',
 	    'https://c.tenor.com/Y8xTSG60n4cAAAPo/my-dress-up-darling-my-dress-up-darling-gif.mp4',
-	    'https://c.tenor.com/XyfPrGSZizsAAAPo/marin-kitagawa-marin.mp4','
+	    'https://c.tenor.com/XyfPrGSZizsAAAPo/marin-kitagawa-marin.mp4',
         ]
         let rin = n[Math.floor(Math.random() * n.length)]
         if (!parsedArgs.joined) {
