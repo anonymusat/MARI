@@ -27,7 +27,7 @@ export default class Command extends BaseCommand {
 	    'https://c.tenor.com/Z75HOpn46VgAAAPo/kitagawa-marin-marin-kitagawa.mp4',
 	    'https://c.tenor.com/Y8xTSG60n4cAAAPo/my-dress-up-darling-my-dress-up-darling-gif.mp4',
 	    'https://c.tenor.com/XyfPrGSZizsAAAPo/marin-kitagawa-marin.mp4',
-            'https://telegra.ph/file/cc211d2b195ccbef82bff.mp4''
+            'https://telegra.ph/file/cc211d2b195ccbef82bff.mp4',
         ]
         let chitoge = n[Math.floor(Math.random() * n.length)]
 	if (!parsedArgs.joined) {
