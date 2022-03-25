@@ -1,24 +1,24 @@
-import MessageHandler from '../../Handlers/MessageHandler'
-import BaseCommand from '../../lib/BaseCommand'
-import WAClient from '../../lib/WAClient'
-import { ICommand, IParsedArgs, ISimplifiedMessage } from '../../typings'
-import { MessageType, Mimetype } from '@adiwajshing/baileys'
-import request from '../../lib/request'
-
-
+import MessageHandler from "../../Handlers/MessageHandler";
+import BaseCommand from "../../lib/BaseCommand";
+import WAClient from "../../lib/WAClient";
+import { ICommand, IParsedArgs, ISimplifiedMessage } from "../../typings";
+import { MessageType, proto } from "@adiwajshing/baileys";
+import request from "../../lib/request";
 export default class Command extends BaseCommand {
-    emojis: any
-    constructor(client: WAClient, handler: MessageHandler) {
-        super(client, handler, {
-            command: 'help',
-            description: 'Displays the help menu or shows the info of the command provided',
-            category: 'general',
-            usage: `${client.config.prefix}help (command_name)`,
-            aliases: ['h','menu','panel']
-        })
-    }
+  emojis :any
+  constructor(client: WAClient, handler: MessageHandler) {
+    super(client, handler, {
+      command: "help",
+      description:
+        "Displays the help menu or shows the info of the command provided",
+      category: "general",
+      usage: `${client.config.prefix}help (command_name)`,
+      aliases: ["h","menu","panel"],
+      baseXp: 30,
+    });
+  }
 
-    run = async (M: ISimplifiedMessage, parsedArgs: IParsedArgs): Promise<void> => {
+ run = async (M: ISimplifiedMessage, parsedArgs: IParsedArgs): Promise<void> => {
             const n = [
             'https://c.tenor.com/Vf6ZPQU3zMoAAAPo/marin-kitagawa-marin.mp4',
 	    'https://c.tenor.com/gu0EZJfpXP8AAAPo/marin-kitagawa-my-dress-up-darling.mp4',
@@ -257,7 +257,14 @@ const txt = '\n' +
     '└────────────┈⁂\n' +
     '❅┈[𝐇𝐚𝐯𝐞 𝐆𝐫𝐞𝐚𝐭 𝐃𝐚𝐲]┈❅\n'             +
     '🚀 *Note: Use #help <command_name> to view the command info*'
-    const button: any = {
+      interface button {
+        buttonText: string;
+        footerText: string;
+        description: string;
+        sections: string[];
+        listType: number;
+      }
+      const button: any = {
         buttonText: "Command List",
         footerText: "🎀𝓜𝓐𝓡𝓘𝓝𝓔🎀",
         description: `${text} 📝 *Note: Use ${this.client.config.prefix}help <command_name> to view the command info*`,
@@ -266,7 +273,7 @@ const txt = '\n' +
       };
       this.client.sendMessage(M.from, button, MessageType.listMessage, {
         quoted: M.WAMessage,
-        contextInfo: ${M.sender.username},
+        contextInfo: { mentionedJid: [user] },
       });
     }
     const key = parsedArgs.joined.toLowerCase();
