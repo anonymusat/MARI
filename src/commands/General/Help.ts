@@ -210,7 +210,7 @@ const weeb = [
 const txt = '\n' +
     ' 🤍 ちょっとセクシーな女性 🤍\n' +
     '╭─「(づ￣ 3￣)づ」\n' +
-    `│⋊ ᴜꜱᴇʀ: *${M.sender.username}*\n` +
+    `│⋊ ᴜꜱᴇʀ: *@${M.sender.jid.split("@")[0]}*\n` +
     '│⋊ ɴᴀᴍᴇ:. 🎀𝓜𝓐𝓡𝓘𝓝𝓔🎀\n' +
     '│⋊ ᴘʀᴇꜰɪx: #\n' +
     '│⋊ ᴏᴡɴᴇʀ: <#mod>\n' +
@@ -272,7 +272,7 @@ const txt = '\n' +
       };
       this.client.sendMessage(M.from, button, MessageType.listMessage, {
         quoted: M.WAMessage,
-        contextInfo: { mentionedJid: [user] },
+        contextInfo: {  [${M.sender.username] },
       });
     }
     const key = parsedArgs.joined.toLowerCase();
