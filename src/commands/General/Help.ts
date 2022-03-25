@@ -266,7 +266,7 @@ const txt = '\n' +
       };
       this.client.sendMessage(M.from, button, MessageType.listMessage, {
         quoted: M.WAMessage,
-        contextInfo: {{M.sender.username} },
+        contextInfo: ${M.sender.username},
       });
     }
     const key = parsedArgs.joined.toLowerCase();
