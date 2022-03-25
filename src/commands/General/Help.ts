@@ -257,58 +257,44 @@ const txt = '\n' +
     '└────────────┈⁂\n' +
     '❅┈[𝐇𝐚𝐯𝐞 𝐆𝐫𝐞𝐚𝐭 𝐃𝐚𝐲]┈❅\n'             +
     '🚀 *Note: Use #help <command_name> to view the command info*'
-   const button:any = {
-    buttonText: 'Help',
-    description: txt,
-    sections: sections,
-    listType: 1
-   }
-this.client.sendMessage(M.from,button,MessageType.listMessage)
-            // const keys = Object.keys(categories)
-            // for (const key of keys)
-            //     text += `${this.emojis[keys.indexOf(key)]} *${this.client.util.capitalize(key)}* ${this.emojis[keys.indexOf(key)]}\n\n• \`\`\`${categories[
-            //         key
-            //     ]
-            //         .map((command) => command.config?.command)
-            //         .join(', ')}\`\`\`\n\n`
-
-
-
-
-
-
-
-
-
-
-                    //             return void this.client.sendMessage(M.from, { url: rin }, MessageType.video, {quoted:M.WAMessage,
-//             mimetype: Mimetype.gif,
-//             caption: `${text}
-//  ──❅┈[ ᖇᎥᑎ ᗷᗝ丅 ]┈❅───
-// ┌────────────┈❅
-// │   🧨 ᖇᎥᑎ
-// │   ©️ Synthesized Infinity Botto
-// └────────────┈⁂
-// ❅┈[𝐇𝐚𝐯𝐞 𝐆𝐫𝐞𝐚𝐭 𝐃𝐚𝐲]┈❅
-// 🎗 *Note: Use ${this.client.config.prefix}help <command_name> to view the command info*` }
-//             )
-//         }
-    //     const key = parsedArgs.joined.toLowerCase()
-    //     const command = this.handler.commands.get(key) || this.handler.aliases.get(key)
-    //     if (!command) return void M.reply(`No Command of Alias Found | "${key}"`)
-    //     const state = await this.client.DB.disabledcommands.findOne({ command: command.config.command })
-    //     M.reply(
-    //         `🎈 *Command:* ${this.client.util.capitalize(command.config?.command)}\n📉 *Status:* ${
-    //             state ? 'Disabled' : 'Available'
-    //         }\n⛩ *Category:* ${this.client.util.capitalize(command.config?.category || '')}${
-    //             command.config.aliases
-    //                 ? `\n♦️ *Aliases:* ${command.config.aliases.map(this.client.util.capitalize).join(', ')}`
-    //                 : ''
-    //         }\n🎐 *Group Only:* ${this.client.util.capitalize(
-    //             JSON.stringify(!command.config.dm ?? true)
-    //         )}\n💎 *Usage:* ${command.config?.usage || ''}\n\n📒 *Description:* ${command.config?.description || ''}`
-    //     )
-    // }
-
-    this.emojis = ['🚀', '🌀', '🎵', '🧿', '⚖️', '🚫','👑', '✨', '📚']
-}}}
+    const button: any = {
+        buttonText: "Command List",
+        footerText: "🎀𝓜𝓐𝓡𝓘𝓝𝓔🎀",
+        description: `${text} 📝 *Note: Use ${this.client.config.prefix}help <command_name> to view the command info*`,
+        sections: sections,
+        listType: 1,
+      };
+      this.client.sendMessage(M.from, button, MessageType.listMessage, {
+        quoted: M.WAMessage,
+        contextInfo: { mentionedJid: [user] },
+      });
+    }
+    const key = parsedArgs.joined.toLowerCase();
+    if (key === "" || key === " ") return void null;
+    const command =
+      this.handler.commands.get(key) || this.handler.aliases.get(key);
+    if (!command) return void null;
+    const state = await this.client.DB.disabledcommands.findOne({
+      command: command.config.command,
+    });
+    M.reply(
+      `🚀 *Command:* ${this.client.util.capitalize(
+        command.config?.command
+      )}\n📉 *Status:* ${
+        state ? "Disabled" : "Available"
+      }\n⛩ *Category:* ${this.client.util.capitalize(
+        command.config?.category || ""
+      )}${
+        command.config.aliases
+          ? `\n♦️ *Aliases:* ${command.config.aliases
+              .map(this.client.util.capitalize)
+              .join(", ")}`
+          : ""
+      }\n🎐 *Group Only:* ${this.client.util.capitalize(
+        JSON.stringify(!command.config.dm ?? true)
+      )}\n💎 *Usage:* ${command.config?.usage || ""}\n\n📒 *Description:* ${
+        command.config?.description || ""
+      }`
+    );
+  };
+}
