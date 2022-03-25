@@ -5,7 +5,6 @@ import { ICommand, IParsedArgs, ISimplifiedMessage } from "../../typings";
 import { MessageType, proto } from "@adiwajshing/baileys";
 import request from "../../lib/request";
 export default class Command extends BaseCommand {
-  emojis :any
   constructor(client: WAClient, handler: MessageHandler) {
     super(client, handler, {
       command: "help",
