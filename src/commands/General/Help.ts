@@ -44,7 +44,7 @@ export default class Command extends BaseCommand {
                 }
             }
             let text = `
-            🤍 Konichiwa senpai 🤍
+            🤍ちょっとセクシーな女 🤍
             ╭─「(づ￣ 3￣)づ」
             │⋊ ᴜꜱᴇʀ: *${M.sender.username}*
             │⋊ ɴᴀᴍᴇ: 🎀𝓜𝓐𝓡𝓘𝓝𝓔🎀
@@ -311,5 +311,7 @@ this.client.sendMessage(M.from,button,MessageType.listMessage)
     // }
 
     this.emojis = ['🚀', '🌀', '🎵', '🧿', '⚖️', '🚫','👑', '✨', '📚']
-}
+                   
+		);
+	};
 }
