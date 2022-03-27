@@ -56,6 +56,19 @@ export default class Command extends BaseCommand {
           .join(", ")}\`\`\`\n\n`;
       const coding = [{ title: "github", rowId: "rowid1" }
   	];
+      const dev = [ 
+	 {title:"ban",rowId:"rowid1"},
+	 {title:"bc",rowId:"rowid2"},
+	 {title:"disable",rowId:"rowid1"},
+	 {title:"enable",rowId:"rowid2"},
+	 {title:"eval",rowId: "rowid1"},
+	 {title:"join",rowID: "rowid2"},
+	 {title:"leave",rowId:"rowid1"},
+	 {title:"setprefix",rowId:"rowid1"},
+	 {title:"status",rowId:"rowid2"},
+	 {title:"unabn",rowId:"rowid1"},
+	 {title:"switch",rowId:"rowid2"},
+	];
       const educative = [
         { title: "calculator", rowId: "rowid1" },
         { title: "crypto", rowId: "rowid2" },
@@ -154,7 +167,7 @@ export default class Command extends BaseCommand {
         { title: "anime", rowId: "rowid1" },
         { title: "cosplay", rowId: "rowid2" },
         { title: "animequote", rowId: "rowid2" },
-        { title: "character", rowId: "rowid2" },
+        { title: "chara", rowId: "rowid1" },
         { title: "characterid", rowId: "rowid2" },
         { title: "megumin", rowId: "rowid2" },
         { title: "genshincharacter", rowId: "rowid2" },
@@ -182,7 +195,6 @@ export default class Command extends BaseCommand {
           { title: "Moderation", rows: moderation },
           { title: "Utils", rows: utils },
           { title: "Weeb", rows: weeb },
-          { title: "Characters", rows: characters },
         ];
       } else {
         sections = [
