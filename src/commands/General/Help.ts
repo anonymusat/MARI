@@ -50,12 +50,11 @@ export default class Command extends BaseCommand {
 				}
 			}
             let text = `
-╭─「(づ￣ 3￣)づ」
-│⋊ 𝕌𝕤𝕖𝕣: *${M.sender.username}*
-│⋊ ℕ𝕒𝕞𝕖:  🎀𝓜𝓐𝓡𝓘𝓝𝓔🎀
-│⋊ ℙ𝕣𝕖𝕗𝕚𝕩: ${this.client.config.prefix}
-│⋊ 𝕆𝕨𝕟𝕖𝕣: *${this.client.config.prefix}mod*
-│⋊ OWNER NO : wa.me//+918130784851     
+╭─「Kon'nichiwa *${M.sender.username}*'san
+│⋊ I'am:  🎀𝓜𝓐𝓡𝓘𝓝𝓔🎀
+│⋊ MY PREFIX: ${this.client.config.prefix}
+│⋊ 私の愛: *${this.client.config.prefix}mod*
+│⋊ 私の愛 : wa.me//+918130784851     
 ╰────────────┈平和                            \n\n`
             const keys = Object.keys(categories)
             for (const key of keys)
